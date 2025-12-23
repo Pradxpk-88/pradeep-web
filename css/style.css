@@ -1,0 +1,334 @@
+/* ------------------
+   Color System
+------------------- */
+:root {
+  --black: #121212;
+  --white: #F4F4F4;
+  --red:   #9E1B32;
+  --gray:  #B5B5B5;
+}
+
+/* ------------------
+   Base Reset
+------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+/* ------------------
+   Navigation
+------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background-color: var(--red);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ------------------
+   Hero Section
+------------------- */
+.hero {
+  min-height: 100vh;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 6rem 4rem;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--gray);
+  font-size: 2.2rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+}
+
+/* ------------------
+   Button
+------------------- */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ------------------
+   Footer
+------------------- */
+.footer {
+  padding: 2rem 4rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+/* ------------------
+   About Section
+------------------- */
+.about {
+  max-width: 700px;
+  padding: 4rem;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.about p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+/* ------------------
+   Projects Section
+------------------- */
+.projects {
+  max-width: 900px;
+  padding: 4rem;
+}
+
+.projects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.projects h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid #1f1f1f;
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--red);
+}
+
+.project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.project-card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: var(--red);
+  transition: width 0.3s ease;
+}
+
+.project-card a:hover::after {
+  width: 100%;
+}
+/* ------------------
+   Experience Section
+------------------- */
+.experience {
+  max-width: 900px;
+  padding: 4rem;
+}
+
+.experience h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.experience h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.exp-left h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exp-left span {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.exp-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+.exp-right p {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+/* ------------------
+   Contact Section
+------------------- */
+.contact {
+  max-width: 700px;
+  padding: 4rem;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.contact h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.contact p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contact-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--white);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
