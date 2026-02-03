@@ -54,7 +54,7 @@ function initializeNavigation() {
         anchor.addEventListener('click', (e) => {
             const targetId = anchor.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
                 e.preventDefault();
                 const sectionIndex = Array.from(sections).indexOf(targetSection);
@@ -73,7 +73,7 @@ function handleNavClick(e) {
     e.preventDefault();
     const targetSection = e.target.dataset.section;
     const sectionElement = document.getElementById(targetSection);
-    
+
     if (sectionElement) {
         const sectionIndex = Array.from(sections).indexOf(sectionElement);
         navigateToSection(sectionIndex);
@@ -145,7 +145,7 @@ function updateActiveStates(index) {
 function handleKeyboardNav(e) {
     if (isScrolling) return;
 
-    switch(e.key) {
+    switch (e.key) {
         case 'ArrowDown':
         case 'PageDown':
             e.preventDefault();
@@ -185,7 +185,7 @@ function initializeObservers() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // Update current section index
                 const index = Array.from(sections).indexOf(entry.target);
                 if (index !== -1) {
@@ -207,7 +207,7 @@ function initializeObservers() {
 function initializeMobileMenu() {
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        
+
         // Animate hamburger icon
         const spans = navToggle.querySelectorAll('span');
         if (navMenu.classList.contains('active')) {
@@ -280,6 +280,32 @@ function initializeButtons() {
             // Replace with actual certifications URL
             alert('Please add your certifications URL in script.js');
             // window.open('path/to/your/certifications', '_blank');
+        });
+    }
+
+    // Toggle Projects Button (Show More / Show Less)
+    const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
+    const allProjectsContainer = document.getElementById('all-projects-container');
+
+    if (toggleProjectsBtn && allProjectsContainer) {
+        toggleProjectsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isVisible = allProjectsContainer.classList.contains('visible');
+
+            if (isVisible) {
+                allProjectsContainer.classList.remove('visible');
+                toggleProjectsBtn.textContent = 'View All Projects';
+                // Scroll back to Featured Projects top slightly to indicate closure
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                allProjectsContainer.classList.add('visible');
+                toggleProjectsBtn.textContent = 'Show Less';
+                // Optional: Scroll to the new content start
+                allProjectsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
     }
 }
